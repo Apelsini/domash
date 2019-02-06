@@ -13,13 +13,18 @@ public class Oop_zadacha1 {
         System.out.println("проверочная точка имеет координаты X=" + p.getX() + " и Y=" + p.getY());
 
         System.out.println("задача 2 с классом Rectangle и Circle");
-       Point a1 = new Point (3,4);
-       Point a2 = new Point(7,8);
-        Rectangle b = new Rectangle(new Point (1,1), new Point(3,4));
-        b.setCorner1(a1);
-        b.setCorner1(a2);
-        System.out.println(" диагональ прямоугольника ="+b.diagonal());
+        Point a1 = new Point(3, 4);
+        Point a2 = new Point(7, 8);
+        Rectangle b = new Rectangle(a1, a2);
+        System.out.println(" диагональ прямоугольника =" + b.diagonal());
 
+        Point b1 = new Point(0, 0);
+        Point b2 = new Point(7, 8);
+        Circle c = new Circle (b1, b2);
+        System.out.println(" длина окружности ="+c.dlinaOkruzh());
+
+        System.out.println("площадь прямоугольника ="+b.getSquare());
+        System.out.println("площадь круга ="+c.getSquare());
 
     }
 }

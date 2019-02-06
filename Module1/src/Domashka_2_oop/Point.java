@@ -13,11 +13,11 @@ public class Point {
      * Создать метод distance,
      * принимающий объект Point и определяющий расстояние до неё.
      */
-    static int x;
-    static int y;
+    private int x;
+    private int y;
 
     public void setX(int x) {
-        Point.x = x;
+        this.x = x;
     }
 
     public int getX() {
@@ -25,7 +25,7 @@ public class Point {
     }
 
     public void setY(int y) {
-        Point.y = y;
+        this.y = y;
     }
 
     public int getY() {
@@ -52,4 +52,8 @@ public class Point {
     public Point scale (int zoom) {
         return new Point (Math.round(this.getX()/zoom), Math.round(this.getY()/zoom));
     }
+}
+
+interface findSquare<T extends Number> {
+    T getSquare();
 }

@@ -1,8 +1,8 @@
 package Domashka_2_oop;
 
-public class Rectangle {
-    static Point corner1;
-    static Point corner2;
+public class Rectangle implements findSquare<Integer> {
+    private Point corner1;
+    private Point corner2;
 
     public Rectangle(Point corner1, Point corner2) {
         this.setCorner1(corner1);
@@ -27,11 +27,15 @@ public class Rectangle {
 
     public double diagonal() {
 
-        double res = this.getCorner2().distancePoint(this.getCorner1(), this.getCorner2());
-        System.out.println(this.getCorner1().getX() + " " + this.getCorner1().getY());
-        System.out.println(this.getCorner2().getX() + " " + this.getCorner2().getY());
+        double res = this.getCorner1().distancePoint(this.getCorner1(), this.getCorner2());
         return res;
     }
 
 
+    @Override
+    public Integer getSquare() {
+        int a=Math.abs(this.getCorner1().getX()-this.getCorner2().getX());
+        int b=Math.abs(this.getCorner1().getY()-this.getCorner2().getY());
+        return a*b;
+    }
 }
