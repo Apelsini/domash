@@ -1,6 +1,6 @@
 package Domashka_2_oop;
 
-public class Circle implements findSquare<Double> {
+public class Circle implements findSquare<Double>, findPerimeter<Double>{
     private Point radius;
     private Point center;
 
@@ -35,5 +35,10 @@ public class Circle implements findSquare<Double> {
     public Double getSquare() {
         double sq = this.getCenter().distancePoint(this.getCenter(), this.getRadius())*this.getCenter().distancePoint(this.getCenter(), this.getRadius())* Math.PI;
         return sq;
+    }
+
+    @Override
+    public Double getPerimeter() {
+        return this.dlinaOkruzh();
     }
 }

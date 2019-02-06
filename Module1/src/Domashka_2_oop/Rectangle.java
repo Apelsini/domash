@@ -1,6 +1,6 @@
 package Domashka_2_oop;
 
-public class Rectangle implements findSquare<Integer> {
+public class Rectangle implements findSquare<Integer>, findPerimeter<Integer> {
     private Point corner1;
     private Point corner2;
 
@@ -31,11 +31,21 @@ public class Rectangle implements findSquare<Integer> {
         return res;
     }
 
+    public int getSideA() {
+        return Math.abs(this.getCorner1().getX() - this.getCorner2().getX());
+    }
+
+    public int getSideB() {
+        return Math.abs(this.getCorner1().getY() - this.getCorner2().getY());
+    }
 
     @Override
     public Integer getSquare() {
-        int a=Math.abs(this.getCorner1().getX()-this.getCorner2().getX());
-        int b=Math.abs(this.getCorner1().getY()-this.getCorner2().getY());
-        return a*b;
+        return this.getSideA() * this.getSideB();
+    }
+
+    @Override
+    public Integer getPerimeter() {
+        return 2*(this.getSideA() + this.getSideB());
     }
 }

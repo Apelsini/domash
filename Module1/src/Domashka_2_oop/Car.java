@@ -2,22 +2,22 @@ package Domashka_2_oop;
 
 public class Car {
 
-    static int position;
-    static float rasx;
-    static float benzobak;
-    static float benzomax;
-    static String name;
+    private int position;
+    private float rasx;
+    private float benzobak;
+    private float benzomax;
+    private String name;
 
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        Car.name = name;
+        this.name = name;
     }
 
     public void setBenzomax(float benzomax) {
-        Car.benzomax = benzomax;
+        this.benzomax = benzomax;
     }
 
     public float getBenzomax() {
@@ -29,7 +29,7 @@ public class Car {
     }
 
     public void setBenzobak(float benzobak) {
-        Car.benzobak = benzobak;
+        this.benzobak = benzobak;
     }
 
     public float getRasx() {
@@ -37,7 +37,7 @@ public class Car {
     }
 
     public void setRasx(float rasx) {
-        Car.rasx = rasx;
+        this.rasx = rasx;
     }
 
     public int getPosition() {

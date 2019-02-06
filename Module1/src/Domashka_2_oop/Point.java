@@ -57,3 +57,13 @@ public class Point {
 interface findSquare<T extends Number> {
     T getSquare();
 }
+
+interface findPerimeter<T extends Number> {
+    T getPerimeter();
+}
+
+interface findHeight<T extends Number> {
+
+    T getHeight();
+}
+
