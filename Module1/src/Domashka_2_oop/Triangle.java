@@ -69,4 +69,9 @@ public class Triangle implements findSquare<Double>, findPerimeter<Double> {
         return Double.valueOf(Math.sqrt(podkorennoe));
     }
 
+    @Override
+    public String toString() {
+        return "это треугольник";
+    }
+
 }

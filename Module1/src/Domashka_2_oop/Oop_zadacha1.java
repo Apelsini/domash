@@ -53,7 +53,15 @@ public class Oop_zadacha1 {
         System.out.println("площадь треугольника # 2="+d.getSquare()+" и его периметр ="+d.getPerimeter());
 
         System.out.println(" площади треугольников № 1 и № 2 совпадают? ="+w1.SquareEquals(w1, w2));
+        System.out.println("Фигура w1 - треугольник? ="+w1.isTriangle());
+        System.out.println("Фигура w1 - прямоугольник? ="+w1.isRectangle());
 
+
+        System.out.println(c.toString()); // оверрайд метода ToString выводит свое сообщение
+        System.out.println(a1.toString());
+        System.out.println(d.toString());
+        System.out.println(w1.toString());
+        System.out.println(j.toString());
 
     }
 }

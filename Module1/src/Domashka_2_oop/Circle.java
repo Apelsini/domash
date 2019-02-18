@@ -41,4 +41,9 @@ public class Circle implements findSquare<Double>, findPerimeter<Double>{
     public Double getPerimeter() {
         return this.dlinaOkruzh();
     }
+
+    @Override
+    public String toString() {
+        return "это круг";
+    }
 }

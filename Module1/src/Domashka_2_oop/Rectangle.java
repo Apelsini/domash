@@ -48,4 +48,9 @@ public class Rectangle implements findSquare<Integer>, findPerimeter<Integer> {
     public Integer getPerimeter() {
         return 2*(this.getSideA() + this.getSideB());
     }
+
+    @Override
+    public String toString() {
+        return "это прямоугольник";
+    }
 }

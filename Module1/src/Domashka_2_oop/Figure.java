@@ -1,8 +1,9 @@
 package Domashka_2_oop;
 
-abstract class Figure extends SquareEquals {
+abstract class Figure extends ShapeUtils {
     private Figure() {
 
+        super();
     }
 
     public static final class CircleFigure extends Figure implements findHeight<Double> {
@@ -171,6 +172,11 @@ abstract class Figure extends SquareEquals {
             double hc = 2 * Math.sqrt(q) / sideC;
             return Math.max(Math.max(ha, hb), hc);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "это фигура";
     }
 
 }

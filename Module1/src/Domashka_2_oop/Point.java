@@ -52,6 +52,12 @@ public class Point {
     public Point scale (int zoom) {
         return new Point (Math.round(this.getX()/zoom), Math.round(this.getY()/zoom));
     }
+
+    @Override
+    public String toString() {
+        return "это точка";
+    }
+
 }
 
 interface findSquare<T extends Number> {
