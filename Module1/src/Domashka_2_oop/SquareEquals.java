@@ -2,7 +2,7 @@ package Domashka_2_oop;
 
 abstract class SquareEquals {
 
-    private SquareEquals() {
+    public SquareEquals() {
     }
 
     public boolean SquareEquals(Figure a, Figure b) {

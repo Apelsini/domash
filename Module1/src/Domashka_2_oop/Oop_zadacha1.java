@@ -47,9 +47,13 @@ public class Oop_zadacha1 {
         Point h2 = new Point (10,5);
         Point h3 = new Point (0,5);
         Triangle j = new Triangle(h1,h2,h3);
+        Figure w1 = new Figure.TriangleFigure(new Point (0,0), d);
+        Figure w2 = new Figure.TriangleFigure(new Point (1,1), j);
+
         System.out.println("площадь треугольника # 2="+d.getSquare()+" и его периметр ="+d.getPerimeter());
 
-        System.out.println(" площади треугольников № 1 и № 2 совпадают? ="+);
+        System.out.println(" площади треугольников № 1 и № 2 совпадают? ="+w1.SquareEquals(w1, w2));
+
 
     }
 }

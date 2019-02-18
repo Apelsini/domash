@@ -1,6 +1,6 @@
 package Domashka_2_oop;
 
-abstract class Figure {
+abstract class Figure extends SquareEquals {
     private Figure() {
 
     }
