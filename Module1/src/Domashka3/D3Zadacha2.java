@@ -1,71 +1,68 @@
 package Domashka3;
-
 import java.util.Scanner;
 
-public class D3Zadacha2 {
-    // Написать программу, принимающую массив целых чисел,
-    // в котором м.б. повторения,
-    //  и возвращающую новый массив без повторяющихся числел,
-    //  и печатающую результат. В результирующем массиве не
-    //  должно быть дубликатов.
+public class D3zadacha2 {
+    /**
+     * Написать программу, принимающую массив целых чисел, в котором м.б. повторения,
+     * и возвращающую новый массив без повторяющихся числел, и печатающую результат.
+     * В результирующем массиве не должно быть дубликатов.
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("введите число элементов в массиве");
+        System.out.println("введите количество целых числе в массиве");
         int a = sc.nextInt();
         int[] mas = new int[a];
-        for (int b = 0; b < mas.length; b++) {
-            System.out.println("введите " + b + " элемент массива:");
-            mas[b] = sc.nextInt();
+        for (int k = 0; k < a; k++) {
+            System.out.println("введите элемент массива " + k);
+            mas[k] = sc.nextInt();
         }
-        int[] dup = markduplicates(mas);
+        int[] md = massiv_dublikatov(mas);
+        int kolvodublikatov = 0;
+        for (int n=0; n < md.length; n++) {
+            kolvodublikatov = kolvodublikatov + md[n];
+        }
+        System.out.println("в массиве найдено дубликатов:"+kolvodublikatov);
+        System.out.println("массив пометок дубликатов:");
 
-        System.out.println("получен следующий массив, где дубликаты помечены 1");
-        for (int i = 0; i < dup.length; i++) {
-            System.out.print(dup[i]);
+        for (int l = 0; l < md.length; l++) {
+            System.out.print(md[l]+" ");
         }
-        System.out.println(" ");
-        int[] reslt = new int[mas.length-numdupl(dup)];
-        int count = 0;
-        for (int g=0; g<mas.length; g++){
-            if (dup[g]==0) {
-                reslt[count]=mas[g];
-                count++;
+
+        int[] newmassiv = new int[mas.length - kolvodublikatov];
+        System.out.println("");
+        System.out.println("в массиве удалены повторяющиеся элементы и создан массив:");
+        int index = 0;
+        for (int p = 0; p < mas.length; p++) {
+            if (mas[p] * md[p] == 0) {
+                newmassiv[index] = mas[p];
+                index++;
             }
-        }
 
-        System.out.println("получен следующий результирующий массив");
-        for (int i = 0; i < reslt.length; i++) {
-            System.out.print(reslt[i]);
-        }
 
+        }
+        for (int q = 0; q < newmassiv.length; q++) {
+            System.out.println(newmassiv[q]);
+        }
     }
 
-    public static int[] markduplicates(int[] m) {
-        int[] dupl = new int[m.length];
-        for (int c = 0; c < dupl.length; c++) {
-            //обнуляем массив, где единичками будем помечать дубликаты
-            dupl[c] = 0;
+    public static int[] massiv_dublikatov (int[] b) {
+        int[] md = new int [b.length];
+        for (int i=0; i<b.length; i++) {
+            md[i]=0;
         }
-        for (int i = 0; i < m.length; i++) {
-            int tmp = m[i];
-            for (int j = i; j < m.length; j++) {
-                if (i != j) {
-                    if (m[j] == tmp) {
-                        dupl[j] = 1;
+        int poisk;
+        for (int i=0; i<b.length; i++){
+            poisk = b[i];
+            for (int j=0; j<b.length; j++) {
+                if (j>i) {
+                    if (b[j]==poisk) {
+                        md[j]=1;
                     }
                 }
             }
         }
-        return dupl;
 
+        return md;
     }
-     public static int numdupl (int[] ms) {
-        int res = 0;
-        for (int i=0; i<ms.length; i++){
-            res=res+ms[i];
-        }
-        return res;
-     }
-
 
 }
