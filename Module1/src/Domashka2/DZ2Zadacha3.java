@@ -7,7 +7,7 @@ public class DZ2Zadacha3 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("введите число дней")
+        System.out.println("введите число дней");
         int n = sc.nextInt();
         int bsum = 0;
         int dmax = 0;
