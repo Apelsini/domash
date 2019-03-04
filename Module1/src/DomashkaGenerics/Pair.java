@@ -1,6 +1,6 @@
 package DomashkaGenerics;
 
-public class Pair<E> implements Minomax {
+public class Pair<E> implements Minomax<Integer> {
     private E item1;
     private E item2;
 
@@ -20,16 +20,16 @@ public class Pair<E> implements Minomax {
         this.item2 = item2;
     }
 
-  public  E min() {
+  public Integer min() {
       if (this.item1 instanceof Integer) {
-          return Math.min(this.getItem1(),this.getItem2());
-      } return this.getItem1();
+          return Math.min((Integer) this.getItem1(),(Integer) this.getItem2());
+      } return (Integer) this.getItem1();
     }
 
-  public E max() {
+  public Integer max() {
         if (this.item1 instanceof Integer) {
-            return Math.max(this.getItem1(),this.getItem2());
-        } return this.getItem2();
+            return Math.max((Integer) this.getItem1(), (Integer) this.getItem2());
+        } return (Integer) this.getItem2();
     }
 }
 
