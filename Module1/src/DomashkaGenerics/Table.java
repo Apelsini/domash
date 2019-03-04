@@ -20,12 +20,19 @@ public class Table<K, V> {
         this.arr.remove(this.arr.lastIndexOf(entry));
     }
 
+    public Entry<K, V> getElement(int index) {
+        return this.arr.get(index);
+    }
 
     public V getByKey(K k) {
-        for (int i=0; i<this.arr.size(); i++) {
+        V v = this.getElement(0).getV();
+
+        for (int i = 0; i < this.arr.size(); i++) {
             if (this.arr.get(i).getK() == k) {
-                return this.arr.get(i).getV();
+                v=this.getElement(i).getV();
             }
         }
+        return v;
     }
 }
+
